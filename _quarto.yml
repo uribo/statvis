@@ -1,6 +1,8 @@
 project:
   type: book
   output-dir: docs
+  preview:
+    browser: true
 
 book:
   title: "統計グラフ作成の手引き"
@@ -8,7 +10,9 @@ book:
   date: "2022/6/9"
   cover-image: cover.png
   search: true
+  site-url: https://uribo.github.io/statvis/
   repo-url: https://github.com/uribo/statvis
+  repo-branch: main
   repo-actions: [edit]
   sharing: [twitter, facebook]
   number-depth: 2
@@ -37,6 +41,9 @@ format:
     theme:
       light: cosmo
       dark: darkly
+    code-link: true
+    use_issues_button: true
+    use_repository_button: true
 
 lang: ja
 
