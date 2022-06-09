@@ -1,0 +1,94 @@
+# 色の選び方
+
+## 表現可能な色
+
+`colors()`を実行する
+
+```{r}
+rgb(red = 255, green = 0, blue = 0, maxColorValue = 255)
+```
+
+```{r}
+if (!rlang::is_installed("colorinfo"))
+  install.packages("colorinfo", repos = c(mm = "https://uribo.r-universe.dev", getOption("repos")))
+
+colorinfo::col_block("#FF0000")
+```
+
+
+## カラーパレットを利用する
+
+自分の好きな色をいくつか選んでグラフに使用するのは良いアイデアではありません。
+大体の場合、まとまりがない配色になります。
+
+- 連続... 主に単色で濃淡（グラデーション）によって色の違いを表現する
+- 離散（定量）
+- 発散... 意味のある中間値をもつ
+
+複数の色をセットにしたカラーパレットを使うのが妥当な選択肢となります。
+Rでは標準のカラーパレットが用意されています。
+
+R4.0.0以降のバージョンのRでは
+
+```{r}
+# 異なるバージョンのRでの実行結果を示すため、実行はRStudio Cloudで行いました
+# R3.6.3
+palette()
+#> c("black", "red", "green3", "blue", "cyan", "magenta", "yellow", "gray")
+```
+
+```{r}
+# R4.0.0
+palette()
+#> c("black", "#DF536B", "#61D04F", "#2297E6", "#28E2E5", "#CD0BBC", "#F5C710", "gray62")
+```
+
+
+
+```{r}
+#| eval: false
+#| echo: false
+png(filename = "out.png")
+pals::pal.bands(palette(), main = "R4.0.0より前のバージョンでの\n標準palette()")
+dev.off()
+
+png(filename = "out.png")
+pals::pal.bands(palette(), main = "R4.0.0以降のバージョンでの\n標準palette()")
+dev.off()
+```
+
+::: {#fig-elephants layout-ncol=2}
+
+![R4.0.0より前](figures/palette_old.png){#fig-palette-old}
+
+![R4.0.0以降](figures/palette_current.png){#fig-palette_current}
+
+Rの標準palette()の変化
+:::
+
+
+### カラーパレットを提供するパッケージ
+
+https://github.com/malcolmbarrett/ggokabeito
+
+岡部・伊藤スケール
+
+## 色覚多様性への配慮
+
+https://github.com/clauswilke/colorblindr
+
+シュミレートすることができます
+
+## 色を使わないという選択肢
+
+色を減らす、色を使わない選択肢も心に留めておくと良いでしょう。
+
+- カラー印刷ではない紙媒体に掲載する場合 ... モノクロ表示にしたときにどのように見えるか確認するのも大事
+- 濃淡、線の数によって違いを表す ... カラー印刷が主流でなかった時代の名残か
+
+`gray(0)`が黒、`gray(1)`が白の指定となり、間の値を実数値で指定することでグレースケールに対応できます。
+
+## 参考
+
+- 統計グラフの色
+https://oku.edu.mie-u.ac.jp/~okumura/stat/colors.html

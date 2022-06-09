@@ -5,16 +5,37 @@ book:
   title: "統計グラフ作成の手引き"
   author: "瓜生真也"
   date: "2022/6/9"
+  cover-image: cover.png
+  search: true
+  repo-url: https://github.com/uribo/statvis
+  repo-actions: [edit]
+  sharing: [twitter, facebook]
+  number-depth: 2
   chapters:
     - index.qmd
     - intro.qmd
+    - history.qmd
+    - statistical_data.qmd
+    - gallery.qmd
+    - colors.qmd
     - references.qmd
+  appendices:
+    - datasets.qmd
+  page-footer: 
+    left: "Copyright 2022, URYU Shinya" 
+    right: 
+      - icon: github
+        href: https://github.com/uribo
+      - icon: twitter 
+        href: https://twitter.com/u_ribo
 
 bibliography: references.bib
 
 format:
   html:
-    theme: cosmo
+    theme:
+      light: cosmo
+      dark: darkly
 
 lang: ja
 

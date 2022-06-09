@@ -1,0 +1,22 @@
+# 参考文献、URL {.unnumbered}
+
+本書で扱った内容について、参考となる書籍や情報を紹介します。
+
+A History of Data Visualization and Graphic Communication (データ視覚化の人類史)
+
+データ可視化にまつわる歴史とデータ表現の進化の過程について知ることができる
+
+Fundamentals of Data Visualization (データビジュアライゼーションの基礎――明確で、魅力的で、説得力のあるデータの見せ方・伝え方)
+
+ggplot2 - Elegant Graphics for Data Analysis (グラフィックスのためのRプログラミング ggplot2入門... ただし翻訳は初版)
+
+Data Visualization: A practical introduction (データ分析のためのデータ可視化入門)
+
+Data Visualisation: A Handbook for Data Driven Design (データビジュアライゼーション データ駆動型デザインガイド)
+
+多様な種類のグラフについてカタログ的に眺めることができる。
+
+Interactive Web-Based Data Visualization with R, plotly, and shiny (Rによるインタラクティブなデータビジュアライゼーション: 探索的データ解析のためのplotlyとshiny)
+
+::: {#refs}
+:::
