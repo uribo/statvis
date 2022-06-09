@@ -1,0 +1,22 @@
+project:
+  type: book
+
+book:
+  title: "統計グラフ作成の手引き"
+  author: "瓜生真也"
+  date: "2022/6/9"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+
+lang: ja
+
+editor: visual
+
