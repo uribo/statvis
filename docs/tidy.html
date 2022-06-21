@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
 <meta name="generator" content="quarto-0.9.282">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="author" content="瓜生真也">
-<title>統計グラフ作成の手引き</title>
+
+
+<title>統計グラフ作成の手引き - Appendix A — 統計データの整形</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -14,12 +16,24 @@ div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 </style>
-<script src="site_libs/quarto-nav/quarto-nav.js"></script><script src="site_libs/quarto-nav/headroom.min.js"></script><script src="site_libs/clipboard/clipboard.min.js"></script><meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script><script src="site_libs/quarto-search/fuse.min.js"></script><script src="site_libs/quarto-search/quarto-search.js"></script><link href="./intro.html" rel="next">
-<script src="site_libs/quarto-html/quarto.js"></script><script src="site_libs/quarto-html/popper.min.js"></script><script src="site_libs/quarto-html/tippy.umd.min.js"></script><script src="site_libs/quarto-html/anchor.min.js"></script><link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<link href="./datasets.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link class="quarto-color-scheme" id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
 <link class="quarto-color-scheme quarto-color-alternate" rel="prefetch" id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script><link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link class="quarto-color-scheme" href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
 <link class="quarto-color-scheme quarto-color-alternate" rel="prefetch" href="site_libs/bootstrap/bootstrap-dark.min.css">
 <script id="quarto-search-options" type="application/json">{
@@ -41,39 +55,48 @@ ul.task-list{list-style: none;}
     "search-submit-button-title": "検索"
   }
 }</script>
+
+
 </head>
+
 <body class="floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">統計グラフ作成の手引き</h1>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Appendix A — 統計データの整形</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">統計グラフ作成の手引き</a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/uribo/statvis" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
-<li>
-          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=%7Curl%7C">
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
         </li>
     </ul>
-<a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
       </div>
@@ -84,9 +107,9 @@ ul.task-list{list-style: none;}
       </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">前書き</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">前書き</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -126,40 +149,43 @@ ul.task-list{list-style: none;}
         <i class="bi bi-chevron-right ms-2"></i>
       </a>
     </div>
-    <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+    <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./datasets.html" class="sidebar-item-text sidebar-link">本書で使用したデータセット</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tidy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">統計データの整形</span></a>
+  <a href="./tidy.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">統計データの整形</span></a>
   </div>
 </li>
     </ul>
-</li>
+  </li>
     </ul>
-</div>
-</nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc"><h2 id="toc-title">目次</h2>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">目次</h2>
    
   <ul>
-<li>
-<a href="#%E5%89%8D%E6%9B%B8%E3%81%8D" id="toc-前書き" class="nav-link active" data-scroll-target="#%E5%89%8D%E6%9B%B8%E3%81%8D">前書き</a>
+  <li><a href="#データの読み込み" id="toc-データの読み込み" class="nav-link active" data-scroll-target="#データの読み込み"> <span class="header-section-number">A.1</span> データの読み込み</a></li>
+  <li><a href="#dplyrによるデータ操作" id="toc-dplyrによるデータ操作" class="nav-link" data-scroll-target="#dplyrによるデータ操作"> <span class="header-section-number">A.2</span> dplyrによるデータ操作</a>
   <ul class="collapse">
-<li><a href="#%E5%90%84%E7%AB%A0%E3%81%A7%E6%89%B1%E3%81%86%E5%86%85%E5%AE%B9%E4%BA%88%E5%AE%9A" id="toc-各章で扱う内容予定" class="nav-link" data-scroll-target="#%E5%90%84%E7%AB%A0%E3%81%A7%E6%89%B1%E3%81%86%E5%86%85%E5%AE%B9%E4%BA%88%E5%AE%9A">各章で扱う内容（予定）</a></li>
-  <li><a href="#%E5%AF%BE%E8%B1%A1%E8%AA%AD%E8%80%85" id="toc-対象読者" class="nav-link" data-scroll-target="#%E5%AF%BE%E8%B1%A1%E8%AA%AD%E8%80%85">対象読者</a></li>
-  <li><a href="#%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89" id="toc-ソースコード" class="nav-link" data-scroll-target="#%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89">ソースコード</a></li>
-  <li><a href="#%E5%9F%B7%E7%AD%86%E3%81%AE%E8%A8%98%E9%8C%B2" id="toc-執筆の記録" class="nav-link" data-scroll-target="#%E5%9F%B7%E7%AD%86%E3%81%AE%E8%A8%98%E9%8C%B2">執筆の記録</a></li>
-  <li><a href="#%E5%9F%B7%E7%AD%86%E7%92%B0%E5%A2%83" id="toc-執筆環境" class="nav-link" data-scroll-target="#%E5%9F%B7%E7%AD%86%E7%92%B0%E5%A2%83">執筆環境</a></li>
+  <li><a href="#データの結合" id="toc-データの結合" class="nav-link" data-scroll-target="#データの結合"> <span class="header-section-number">A.2.1</span> データの結合</a></li>
+  </ul></li>
+  <li><a href="#tidyrを使ったデータ整形" id="toc-tidyrを使ったデータ整形" class="nav-link" data-scroll-target="#tidyrを使ったデータ整形"> <span class="header-section-number">A.3</span> tidyrを使ったデータ整形</a></li>
   </ul>
-</li>
-  </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/uribo/statvis/edit/main/index.qmd" class="toc-action">編集</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/uribo/statvis/edit/main/tidy.qmd" class="toc-action">編集</a></p></div></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title d-none d-lg-block">統計グラフ作成の手引き</h1>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Appendix A — 統計データの整形</h1>
 </div>
 
 
@@ -168,59 +194,35 @@ ul.task-list{list-style: none;}
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">作者</div>
-    <div class="quarto-title-meta-contents">
-             <p>瓜生真也 </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">公開</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">2022/6/9</p>
-    </div>
-  </div>
     
   </div>
   
 
 </header>
-<section id="前書き" class="level1 unnumbered"><h1 class="unnumbered">前書き</h1><p><img src="cover.png" title="統計グラフ作成の手引き" class="quarto-cover-image img-fluid"></p>
-<p>私たちは日常的に多くのグラフに出会います。街中のポスター、SNS、テレビや新聞などの メディアでさまざまな種類のグラフが登場します。</p>
-<!--
-そこには見た目が綺麗なもの、色使いが素敵なもの、
--->
-<p>本書は「統計グラフ」の作成に焦点を当てたものです。統計グラフに関する、歴史と作成の手順について学びます。また、統計グラフを作る際の注意事項についても紹介します。</p>
-<p>本書の読者が統計グラフを作成する際の手引きとなることを願います。</p>
-<section id="各章で扱う内容予定" class="level2"><h2 class="anchored" data-anchor-id="各章で扱う内容予定">各章で扱う内容（予定）</h2>
-<ul>
-<li>統計グラフの概要</li>
-<li>統計グラフの歴史</li>
-<li>統計データの種類</li>
-<li>グラフ作成時の注意</li>
-<li>基本となる作図の種類</li>
-<li>地図表現</li>
-<li>多様な統計グラフ</li>
-<li>インタラクティブな可視化</li>
-</ul></section><section id="対象読者" class="level2"><h2 class="anchored" data-anchor-id="対象読者">対象読者</h2>
-<ul>
-<li>統計グラフの作成に関心がある</li>
-<li>表計算ソフトによるグラフ作成から脱却を目指す人</li>
-<li>Rによる作図のレベルを１段階高めたい人</li>
-</ul></section><section id="ソースコード" class="level2"><h2 class="anchored" data-anchor-id="ソースコード">ソースコード</h2>
-<p>本書で紹介するプログラムは<a href="https://cran.r-project.org">R言語</a>によって書かれています。R言語は統計計算とグラフ作成に優れたプログラミング言語の一つです。オープンソースで開発され、誰もが使うことができます。</p>
-<p>書籍の文章を含んだ一連のソースコードは<a href="https://github.com/uribo/statvis">GitHubで公開</a>しています。文章、ソースコードの誤りや改善点を見つけた方は気軽にプルリクエストをいただけますと幸いです。</p>
-</section><section id="執筆の記録" class="level2"><h2 class="anchored" data-anchor-id="執筆の記録">執筆の記録</h2>
-<ul>
-<li>2022年6月9日 着手、GitHubリポジトリの公開</li>
-</ul></section><section id="執筆環境" class="level2"><h2 class="anchored" data-anchor-id="執筆環境">執筆環境</h2>
-<ul>
-<li>R version 4.2.0 (2022-04-22)</li>
-</ul>
+
+<p>公開される統計データの大多数は、Rなどのプログラムが扱いやすい形式にはなっていません。 入力や閲覧しやすい状態のデータのまま公開されるものが多いためです。</p>
+<p>このようなデータをRで扱うためにはデータ整形の作業が必要になります。 特にtidy dataと呼ばれる形式にデータ整形を行うことで、R上で扱いやすいデータとなります。</p>
+<p>ここでは実際に公開されている統計データを例に、データ整形の方法を学びます。</p>
+<section id="データの読み込み" class="level2" data-number="A.1">
+<h2 data-number="A.1" class="anchored" data-anchor-id="データの読み込み"><span class="header-section-number">A.1</span> データの読み込み</h2>
+<p>日本語</p>
+<p><code>readr::locale(encoding = "cp932")</code></p>
+</section>
+<section id="dplyrによるデータ操作" class="level2" data-number="A.2">
+<h2 data-number="A.2" class="anchored" data-anchor-id="dplyrによるデータ操作"><span class="header-section-number">A.2</span> dplyrによるデータ操作</h2>
+<section id="データの結合" class="level3" data-number="A.2.1">
+<h3 data-number="A.2.1" class="anchored" data-anchor-id="データの結合"><span class="header-section-number">A.2.1</span> データの結合</h3>
+</section>
+</section>
+<section id="tidyrを使ったデータ整形" class="level2" data-number="A.3">
+<h2 data-number="A.3" class="anchored" data-anchor-id="tidyrを使ったデータ整形"><span class="header-section-number">A.3</span> tidyrを使ったデータ整形</h2>
 
 
-</section></section></main><!-- /main --><script type="application/javascript">
+</section>
+
+</main> <!-- /main -->
+<script type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const disableStylesheet = (stylesheets) => {
     for (let i=0; i < stylesheets.length; i++) {
@@ -395,20 +397,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
 });
-</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./datasets.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">本書で使用したデータセット</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./intro.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">統計グラフとは何か</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">Copyright 2022, URYU Shinya</div>   
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-<li class="nav-item compact">
+    <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/uribo">
       <i class="bi bi-github" role="img">
 </i> 
@@ -421,9 +426,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </a>
   </li>  
 </ul>
-</div>
+    </div>
   </div>
 </footer>
+
 
 
 </body></html>
