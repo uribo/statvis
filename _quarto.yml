@@ -26,6 +26,7 @@ book:
     - references.qmd
   appendices:
     - datasets.qmd
+    - tidy.qmd
   page-footer: 
     left: "Copyright 2022, URYU Shinya" 
     right: 
